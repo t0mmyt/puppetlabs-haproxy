@@ -77,7 +77,7 @@
 #
 define haproxy::listen (
   $ports                        = undef,
-  $ipaddress                    = [$::ipaddress],
+  $ipaddress                    = undef,
   $bind                         = undef,
   $mode                         = undef,
   $collect_exported             = true,
@@ -88,6 +88,7 @@ define haproxy::listen (
     ],
     'balance' => 'roundrobin'
   },
+  $stats                         = undef,
   # Deprecated
   $bind_options                 = '',
 ) {
